@@ -1,19 +1,31 @@
 :host {
   display: flex;
   justify-content: center;
-  margin: 100px 0px;
+  // margin: 100px 0px;
+  height: 100vh;
+  background-image: linear-gradient(315deg, #36669d 0%, #d3d3d3 74%);
 }
 
 mat-card {
+  margin: 35vh auto;
   max-width: 600px;
-
+  background-color: #272A36;
+  border-radius: 14px;
   mat-card-title,
   mat-card-content {
+    color: white;
     display: flex;
     justify-content: center;
+    padding-right: 20px;
 
     form {
       .mat-form-field {
+        line-height: 2;
+        border-radius: 15px;
+        margin: 12px;
+        padding-left: 12px;
+        background-color: #3D404A;
+        color: white;
         width: 100%;
         min-width: 300px;
       }
@@ -28,7 +40,44 @@ mat-card {
       .button {
         display: flex;
         justify-content: flex-end;
+        margin-top: 25px;
+      }
+
+      a{
+        text-decoration: none;
       }
     }
+    .button button {
+      color: white;
+      width: 180px;
+      height: 50px;
+      border-radius: 25px;
+      background-color: #2093F1;
+    }
   }
+}
+
+::ng-deep .mat-form-field-label {
+  color: white !important; /* Đặt màu cho label */
+}
+
+::ng-deep .mat-form-field-underline {
+  display: none;
+}
+
+input:-webkit-autofill{
+  font: 400 14px/20px inherit, "Helvetica Neue", sans-serif;
+  letter-spacing: normal;
+  -webkit-text-fill-color: white;
+  -webkit-box-shadow: 0 0 0px 1000px #3D404A inset;
+}
+// .mat-form-field-appearance-legacy .mat-form-field-wrapper {
+//   padding-bottom: 0.5em !important;
+// }
+.mat-form-field-wrapper ng-tns-c64-2{
+
+  padding-bottom: 0.5em !important;
+}
+::ng-deep .mat-form-field-wrapper{
+  margin-bottom: -1.25em;
 }

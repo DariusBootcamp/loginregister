@@ -57,11 +57,15 @@
         <mat-error
           *ngIf="this.registerForm.get('passwordConfirm')?.dirty && this.registerForm.hasError('passwordsNotMatching')">
           Passwords are not matching!</mat-error>
-
-        <a [routerLink]="['../login']">Go to Login</a>
         <div class="button">
+          <button style="background-color: white;">
+            <a [routerLink]="['../login']" >Go to Login</a>
+          </button>
+          <!-- <button [routerLink]="['../login']">Go to Login</button> -->
+        <!-- </div>
+        <div class="button"> -->
           <!-- Button is disabled(not clickable), if our RegisterForm contains Validation Errors -->
-          <button type="submit" mat-button [disabled]="!registerForm.valid" style="color: white;">Register</button>
+          <button type="submit" mat-button [disabled]="!registerForm.valid" >Register</button>
         </div>
 
       </form>

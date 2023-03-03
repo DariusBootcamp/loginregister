@@ -3,6 +3,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { tap } from 'rxjs/operators';
 import { Router } from '@angular/router';
 import { AuthService } from '../../services/auth-service/auth.service';
+import { CustomValidators } from '../../custom-validator';
 
 @Component({
   selector: 'app-login',
@@ -14,7 +15,10 @@ export class LoginComponent {
   loginForm: FormGroup = new FormGroup({
     email: new FormControl(null, [Validators.required, Validators.email]),
     password: new FormControl(null, [Validators.required]),
-  });
+    passwordConfirm: new FormControl(null, [Validators.required])
+  },
+  { validators: CustomValidators.passwordsMatching }
+  );
 
   constructor(
     private authService: AuthService,
